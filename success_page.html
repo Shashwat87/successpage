@@ -47,23 +47,15 @@
       background-color: #27ae60;
     }
   </style>
-  <script>
-    // Define the onPageLoad function
-    function onPageLoad() {
-      // Your code to be executed when the page loads
-      alert('Page has loaded.');
-    }
-
-    // Attach the onPageLoad function to the 'load' event
-    window.addEventListener('load', onPageLoad);
-  </script>
 </head>
 <body>
 <div class="container">
 <img src="https://t3.ftcdn.net/jpg/02/01/30/82/360_F_201308263_ylhTkL69sCEDKWXlXu2S4rumX4JZqb4f.jpg" alt="Success Image">
 <h1>Payment Successful!</h1>
-<p>Thank you for your payment.w</p>
+<p>Thank you for your payment.</p>
 </div>
-
+<script>
+     window.opener.postMessage({ urlLoaded: window.location.href });
+  </script>
 </body>
 </html>
