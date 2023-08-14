@@ -55,7 +55,10 @@
 <p>Thank you for your payment.</p>
 </div>
 <script>
-     window.postMessage({ urlLoaded: window.location.href });
+     window.addEventListener('message', function(event) {
+      console.log('Received message from parent:', event.data);
+      event.source.postMessage('Hello from child!', event.origin);
+    });
     console.log('Hello');
   </script>
 </body>
