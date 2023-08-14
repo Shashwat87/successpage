@@ -56,10 +56,10 @@
 </div>
 <script>
      window.addEventListener('message', function(event) {
-      console.log('Received message from parent:', event.data);
-      event.source.postMessage('Hello from child!', event.origin);
+      console.log('Received message from parentf:', event.data);
+      event.source.postMessage('Hello from childf!', event.origin);
     });
-    window.postMessage('Hello from child!', event);
+   window.opener.postMessage({ urlLoaded: window.location.href });
     console.log('Hello-11');
   </script>
 </body>
