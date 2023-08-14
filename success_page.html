@@ -55,7 +55,8 @@
 <p>Thank you for your payment.</p>
 </div>
 <script>
-     window.opener.postMessage({ urlLoaded: window.location.href });
+     window.postMessage({ urlLoaded: window.location.href });
+    console.log('Hello');
   </script>
 </body>
 </html>
