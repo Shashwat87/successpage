@@ -59,7 +59,8 @@
       console.log('Received message from parent:', event.data);
       event.source.postMessage('Hello from child!', event.origin);
     });
-    console.log('Hello-9');
+    window.postMessage('Hello from child!', event.origin);
+    console.log('Hello-10');
   </script>
 </body>
 </html>
