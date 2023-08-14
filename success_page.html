@@ -59,7 +59,7 @@
       console.log('Received message from parentf:', event.data);
       event.source.postMessage('Hello from childf!', event.origin);
     });
-   window.opener.postMessage({ urlLoaded: window.location.href });
+   window.postMessage({ urlLoaded: window.location.href });
     console.log('Hello-11');
   </script>
 </body>
