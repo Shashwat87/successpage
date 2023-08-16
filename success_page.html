@@ -57,10 +57,10 @@
 <script>
   window.addEventListener('message', function(event) {
       console.log('Received messagedd:', event.origin);
-      if (event.origin !== 'http://localhost:8100') {
-        // Reject messages from unknown origins for security
-        return;
-      }
+      // if (event.origin !== 'http://localhost:8100') {
+      //   // Reject messages from unknown origins for security
+      //   return;
+      // }
 
       // Display the received message
       console.log('Received message:', event.data);
@@ -69,7 +69,7 @@
       event.source.postMessage('Message received in other window!', event.origin);
     });
    // window.postMessage({ urlLoaded: window.location.href });
-    console.log('Hello-19');
+    console.log('Hello-20');
   </script>
 </body>
 </html>
