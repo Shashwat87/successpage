@@ -67,7 +67,11 @@
       window.removeEventListener('message', handleMessage);
     }
 
-    window.addEventListener('message', handleMessage);
+    // window.addEventListener('message', handleMessage);-
+     window.addEventListener('load', function() {
+         console.log('Received messagedd:324');
+      window.addEventListener('message', handleMessage, { once: true });
+    });
   // window.addEventListener('message', function(event) {
   //     console.log('Received messagedd:', event.origin);
   //     // if (event.origin !== 'http://localhost:8100') {
@@ -83,7 +87,7 @@
   //     window.rem
   //   });
    // window.postMessage({ urlLoaded: window.location.href });
-    console.log('Hello-21');
+    console.log('Hello-22');
   </script>
 </body>
 </html>
