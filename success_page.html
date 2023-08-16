@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Success Page</title>
 <style>
+
     body {
       font-family: Arial, sans-serif;
       text-align: center;
@@ -47,11 +50,27 @@
     button:hover {
       background-color: #27ae60;
     }
+    .buttonload {
+  background-color: #ffffff; /* Green background */
+  border: none; /* Remove borders */
+  color: red; /* White text */
+  padding: 12px 24px; /* Some padding */
+  font-size: 16px; /* Set a font-size */
+}
+
+/* Add a right margin to each icon */
+.fa {
+  margin-left: -12px;
+  margin-right: 8px;
+}
   </style>
 </head>
 <body>
 <div class="container">
 <img src="https://t3.ftcdn.net/jpg/02/01/30/82/360_F_201308263_ylhTkL69sCEDKWXlXu2S4rumX4JZqb4f.jpg" alt="Success Image">
+<p class="buttonload">
+  <i class="fa fa-spinner fa-spin"></i>Please do not close window
+</p>
 <h1>Payment Successful!</h1>
 <p>Thank you for your payment.</p>
 </div>
@@ -63,28 +82,13 @@
      console.log('Received messagedd:', event.origin);
       console.log('Received message:', event.data);
     event.source.postMessage('Message received in other window!', event.origin);
-      // Remove the message listener after handling the message
+     
       window.removeEventListener('message', handleMessage);
     }
 
      window.addEventListener('message', handleMessage);-
    
-  // window.addEventListener('message', function(event) {
-  //     console.log('Received messagedd:', event.origin);
-  //     // if (event.origin !== 'http://localhost:8100') {
-  //     //   // Reject messages from unknown origins for security
-  //     //   return;
-  //     // }
-
-  //     // Display the received message
-  //     console.log('Received message:', event.data);
-
-  //     // Respond back to the Ionic app's WebView
-  //     event.source.postMessage('Message received in other window!', event.origin);
-  //     window.rem
-  //   });
-   // window.postMessage({ urlLoaded: window.location.href });
-    console.log('Hello-23');
+    console.log('Hello-24');
   </script>
 </body>
 </html>
