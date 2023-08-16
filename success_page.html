@@ -55,21 +55,34 @@
 <p>Thank you for your payment.</p>
 </div>
 <script>
-  window.addEventListener('message', function(event) {
-      console.log('Received messagedd:', event.origin);
+    function handleMessage(event) {
       // if (event.origin !== 'http://localhost:8100') {
-      //   // Reject messages from unknown origins for security
       //   return;
       // }
-
-      // Display the received message
+     console.log('Received messagedd:', event.origin);
       console.log('Received message:', event.data);
+    event.source.postMessage('Message received in other window!', event.origin);
+      // Remove the message listener after handling the message
+      window.removeEventListener('message', handleMessage);
+    }
 
-      // Respond back to the Ionic app's WebView
-      event.source.postMessage('Message received in other window!', event.origin);
-    });
+    window.addEventListener('message', handleMessage);
+  // window.addEventListener('message', function(event) {
+  //     console.log('Received messagedd:', event.origin);
+  //     // if (event.origin !== 'http://localhost:8100') {
+  //     //   // Reject messages from unknown origins for security
+  //     //   return;
+  //     // }
+
+  //     // Display the received message
+  //     console.log('Received message:', event.data);
+
+  //     // Respond back to the Ionic app's WebView
+  //     event.source.postMessage('Message received in other window!', event.origin);
+  //     window.rem
+  //   });
    // window.postMessage({ urlLoaded: window.location.href });
-    console.log('Hello-20');
+    console.log('Hello-21');
   </script>
 </body>
 </html>
